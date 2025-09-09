@@ -1,22 +1,65 @@
-body{
-  margin:0;
-  font-family:sans-serif;
-  background: linear-gradient(135deg, #1f1c2c, #928dab);
-  color:#fff;
-  text-align:center;
-  min-height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  flex-direction:column;
-}
-.cta{
-  display:inline-block;
-  margin-top:20px;
-  padding:12px 30px;
-  background:#ff6a00;
-  color:#fff;
-  border-radius:30px;
-  text-decoration:none;
-  font-weight:bold;
-}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ваш сайт в стиле терминала</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background"></div>
+    
+    <div class="container">
+        <header>
+            <h1>$ user@portfolio <span class="blink">_</span></h1>
+            <p>// Добро пожаловать в мое киберпространство</p>
+        </header>
+        
+        <nav>
+            <ul>
+                <li><a href="#about" data-hover="whoami">~$ whoami</a></li>
+                <li><a href="#skills" data-hover="skills">~$ skills</a></li>
+                <li><a href="#projects" data-hover="projects">~$ projects</a></li>
+                <li><a href="#contact" data-hover="contact">~$ contact</a></li>
+            </ul>
+        </nav>
+        
+        <section id="about">
+            <h2>> whoami</h2>
+            <p>Привет! Я разработчик и дизайнер, увлеченный созданием инновационных цифровых решений.</p>
+            <p>Мой подход сочетает в себе минималистичный дизайн с передовыми технологиями для создания запоминающегося пользовательского опыта.</p>
+        </section>
+        
+        <section id="skills">
+            <h2>> skills --list</h2>
+            <p>Владею широким спектром технологий, включая:</p>
+            <p>• HTML/CSS/JavaScript <span class="blink">|</span></p>
+            <p>• React, Vue.js <span class="blink">|</span></p>
+            <p>• Node.js, Python <span class="blink">|</span></p>
+            <p>• UI/UX дизайн <span class="blink">|</span></p>
+        </section>
+        
+        <section id="projects">
+            <h2>> ls -la /projects/</h2>
+            <p>Вот некоторые из моих недавних проектов:</p>
+            <p>• <a href="#" class="content-link">Киберпанк-портфолио</a> - Интерактивное портфолио с неоновым дизайном</p>
+            <p>• <a href="#" class="content-link">Терминал-симулятор</a> - Веб-приложение, имитирующее командную строку</p>
+            <p>• <a href="#" class="content-link">Генератор сияющего текста</a> - Инструмент для создания CSS-текста с неоновым свечением</p>
+        </section>
+        
+        <section id="contact">
+            <h2>> ssh connect</h2>
+            <p>Свяжитесь со мной через:</p>
+            <p>• Email: <a href="mailto:hello@example.com" class="content-link">hello@example.com</a></p>
+            <p>• GitHub: <a href="#" class="content-link">github.com/username</a></p>
+            <p>• Telegram: <a href="#" class="content-link">@username</a></p>
+        </section>
+        
+        <footer>
+            <p>© 2023 | Создано с помощью HTML, CSS и JavaScript | Вдохновлено cyber-эстетикой</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

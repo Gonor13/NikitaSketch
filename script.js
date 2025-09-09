@@ -1,37 +1,46 @@
-// Анимация появления секций при скролле
+console.log('Script loaded successfully!');
+
+// Анимация появления секций
 document.addEventListener('DOMContentLoaded', function() {
-    const sections = document.querySelectorAll('section');
+    console.log('DOM fully loaded');
     
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
+    const sections = document.querySelectorAll('section');
+    console.log('Found sections:', sections.length);
+    
+    // Простая проверка видимости секций
+    function checkVisibility() {
+        sections.forEach(section => {
+            const rect = section.getBoundingClientRect();
+            const isVisible = (rect.top <= window.innerHeight * 0.8 && rect.bottom >= 0);
+            
+            if (isVisible) {
+                section.classList.add('visible');
             }
         });
-    }, { threshold: 0.1 });
+    }
     
-    sections.forEach(section => {
-        observer.observe(section);
-    });
+    // Проверяем при загрузке и прокрутке
+    checkVisibility();
+    window.addEventListener('scroll', checkVisibility);
     
-    // Добавляем эффект при наведении на навигационные ссылки
+    // Эффекты для навигации
     const navLinks = document.querySelectorAll('nav a');
     navLinks.forEach(link => {
         const originalText = link.textContent;
         const hoverText = link.getAttribute('data-hover');
         
-        link.addEventListener('mouseenter', () => {
-            if (hoverText) {
+        if (hoverText) {
+            link.addEventListener('mouseenter', () => {
                 link.textContent = hoverText;
-            }
-        });
-        
-        link.addEventListener('mouseleave', () => {
-            link.textContent = originalText;
-        });
+            });
+            
+            link.addEventListener('mouseleave', () => {
+                link.textContent = originalText;
+            });
+        }
     });
     
-    // Плавная прокрутка для якорных ссылок
+    // Плавная прокрутка
     document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
@@ -40,10 +49,12 @@ document.addEventListener('DOMContentLoaded', function() {
             
             if (targetElement) {
                 window.scrollTo({
-                    top: targetElement.offsetTop - 20,
+                    top: targetElement.offsetTop - 50,
                     behavior: 'smooth'
                 });
             }
         });
     });
+    
+    console.log('All event listeners attached');
 });

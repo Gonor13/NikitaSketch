@@ -1,0 +1,22 @@
+body{
+  margin:0;
+  font-family:sans-serif;
+  background: linear-gradient(135deg, #1f1c2c, #928dab);
+  color:#fff;
+  text-align:center;
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+}
+.cta{
+  display:inline-block;
+  margin-top:20px;
+  padding:12px 30px;
+  background:#ff6a00;
+  color:#fff;
+  border-radius:30px;
+  text-decoration:none;
+  font-weight:bold;
+}

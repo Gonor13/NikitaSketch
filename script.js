@@ -1,45 +1,45 @@
-// script.js
-console.log('NikitaSketch script loaded!');
+// script.js для NikitaSketch
+console.log('🚀 NikitaSketch script loaded successfully!');
 
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('DOM ready - initializing animations');
+    console.log('✅ DOM ready - initializing animations');
     
-    // Анимация появления секций
-    function checkSections() {
+    // Анимация появления секций при прокрутке
+    function animateSections() {
         const sections = document.querySelectorAll('section');
-        const triggerBottom = window.innerHeight * 0.8;
+        const windowHeight = window.innerHeight;
         
         sections.forEach(section => {
             const sectionTop = section.getBoundingClientRect().top;
             
-            if (sectionTop < triggerBottom) {
+            if (sectionTop < windowHeight * 0.85) {
                 section.classList.add('visible');
             }
         });
     }
     
-    // Запускаем при загрузке и скролле
-    checkSections();
-    window.addEventListener('scroll', checkSections);
+    // Запускаем при загрузке и при скролле
+    animateSections();
+    window.addEventListener('scroll', animateSections);
     
-    // Эффекты для навигации
+    // Эффекты для навигации - меняем текст при наведении
     const navLinks = document.querySelectorAll('nav a');
     navLinks.forEach(link => {
         const originalText = link.textContent;
         const hoverText = link.getAttribute('data-hover');
         
         if (hoverText) {
-            link.addEventListener('mouseenter', () => {
-                link.textContent = hoverText;
+            link.addEventListener('mouseenter', function() {
+                this.textContent = hoverText;
             });
             
-            link.addEventListener('mouseleave', () => {
-                link.textContent = originalText;
+            link.addEventListener('mouseleave', function() {
+                this.textContent = originalText;
             });
         }
     });
     
-    // Плавная прокрутка к секциям
+    // Плавная прокрутка к якорям
     document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
@@ -48,19 +48,23 @@ document.addEventListener('DOMContentLoaded', function() {
             
             if (targetElement) {
                 window.scrollTo({
-                    top: targetElement.offsetTop - 50,
+                    top: targetElement.offsetTop - 70,
                     behavior: 'smooth'
                 });
             }
         });
     });
     
-    console.log('All animations initialized');
+    console.log('🎯 All animations and effects initialized');
 });
 
-// Фallback если секции не анимируются
+// Fallback: если через 2 секунды секции ещё не видны, показываем их
 setTimeout(() => {
-    document.querySelectorAll('section').forEach(section => {
-        section.classList.add('visible');
-    });
-}, 1000);
+    const sections = document.querySelectorAll('section:not(.visible)');
+    if (sections.length > 0) {
+        sections.forEach(section => {
+            section.classList.add('visible');
+        });
+        console.log('🛡️ Fallback: all sections made visible');
+    }
+}, 2000);

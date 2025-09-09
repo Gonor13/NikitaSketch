@@ -4,204 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NikitaSketch | Портфолио</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Courier New', monospace;
-        }
-
-        body {
-            background-color: #0a0a0a;
-            color: #e0e0e0;
-            line-height: 1.6;
-            overflow-x: hidden;
-            padding: 2rem;
-            min-height: 100vh;
-            position: relative;
-        }
-
-        .background {
-            position: fixed;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            z-index: -1;
-            background: 
-                radial-gradient(
-                    circle at center,
-                    rgba(70, 0, 110, 0.15) 0%,
-                    rgba(0, 0, 0, 0) 60%
-                );
-            animation: gradientMove 20s ease-in-out infinite;
-        }
-
-        @keyframes gradientMove {
-            0%, 100% { 
-                transform: rotate(0deg) scale(1);
-                opacity: 0.7;
-            }
-            50% { 
-                transform: rotate(120deg) scale(1.3);
-                opacity: 0.9;
-            }
-        }
-
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 2;
-        }
-
-        header {
-            margin-bottom: 3rem;
-            padding: 1.5rem;
-            border: 1px solid #5a3d8a;
-            box-shadow: 0 0 20px rgba(90, 61, 138, 0.3);
-            border-radius: 5px;
-            background: rgba(15, 15, 20, 0.7);
-        }
-
-        h1 {
-            color: #d8d8d8;
-            text-shadow: 0 0 3px #d8d8d8, 0 0 7px #5a3d8a;
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-            font-weight: 400;
-        }
-
-        .blink {
-            animation: blink 1.2s step-end infinite;
-            color: #8a6dbb;
-            font-weight: bold;
-        }
-
-        @keyframes blink {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.6; }
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1.2rem;
-            margin: 2.5rem 0;
-        }
-
-        nav a {
-            color: #8a6dbb;
-            text-decoration: none;
-            font-size: 1.1rem;
-            position: relative;
-            padding: 0.6rem 1.2rem;
-            transition: all 0.4s ease;
-            border: 1px solid transparent;
-            border-radius: 3px;
-        }
-
-        nav a:hover {
-            color: #e0e0e0;
-            text-shadow: 0 0 4px #e0e0e0;
-            border: 1px solid #6a4f9d;
-            box-shadow: 0 0 12px rgba(106, 79, 157, 0.4);
-            background: rgba(106, 79, 157, 0.1);
-        }
-
-        section {
-            margin: 3rem 0;
-            padding: 2.2rem;
-            border-left: 3px solid #6a4f9d;
-            background: rgba(18, 18, 24, 0.8);
-            opacity: 0;
-            transform: translateY(25px);
-            transition: opacity 0.9s ease, transform 0.9s ease;
-            border-radius: 0 8px 8px 0;
-        }
-
-        section.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        h2 {
-            color: #9d8abb;
-            margin-bottom: 1.8rem;
-            font-size: 1.7rem;
-            text-shadow: 0 0 3px #9d8abb;
-            font-weight: 400;
-        }
-
-        p {
-            margin-bottom: 1.2rem;
-            font-size: 1.1rem;
-            color: #d0d0d0;
-            line-height: 1.7;
-        }
-
-        .content-link {
-            color: #7db4bb;
-            text-decoration: none;
-            text-shadow: 0 0 2px #7db4bb;
-            transition: all 0.3s ease;
-            padding: 0.1rem 0.3rem;
-            border-radius: 2px;
-        }
-
-        .content-link:hover {
-            color: #c0e6eb;
-            text-shadow: 0 0 4px #c0e6eb;
-            background: rgba(125, 180, 187, 0.15);
-        }
-
-        footer {
-            margin-top: 5rem;
-            text-align: center;
-            padding: 2rem 1.5rem;
-            border-top: 1px solid #2a2a35;
-            font-size: 0.9rem;
-            color: #777;
-            background: rgba(15, 15, 20, 0.6);
-            border-radius: 8px;
-        }
-
-        @media (max-width: 768px) {
-            body {
-                padding: 1.2rem;
-            }
-            
-            h1 {
-                font-size: 2rem;
-            }
-            
-            nav ul {
-                flex-direction: column;
-                gap: 1rem;
-            }
-            
-            section {
-                padding: 1.8rem;
-                margin: 2.5rem 0;
-            }
-            
-            nav a {
-                padding: 0.7rem;
-                text-align: center;
-            }
-        }
-
-        body {
-            animation: fadeIn 1.2s ease-out;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="background"></div>
@@ -224,12 +27,12 @@
         <section id="about">
             <h2>> whoami</h2>
             <p>Привет! Я Никита, разработчик и дизайнер, увлеченный созданием инновационных цифровых решений.</p>
-            <p>Мой подход сочетает в себе минималистичный дизайн с передовыми технологиями.</p>
+            <p>Мой подход сочетает в себе минималистичный дизайн с передовыми технологиями для создания запоминающегося пользовательского опыта.</p>
         </section>
         
         <section id="skills">
             <h2>> skills --list</h2>
-            <p>Владею широким спектром технологий:</p>
+            <p>Владею широким спектром технологий, включая:</p>
             <p>• HTML/CSS/JavaScript <span class="blink">|</span></p>
             <p>• React, Vue.js <span class="blink">|</span></p>
             <p>• Node.js, Python <span class="blink">|</span></p>
@@ -238,68 +41,71 @@
         
         <section id="projects">
             <h2>> ls -la /projects/</h2>
-            <p>Мои проекты:</p>
-            <p>• <a href="#" class="content-link">Киберпанк-портфолио</a></p>
-            <p>• <a href="#" class="content-link">Терминал-симулятор</a></p>
-            <p>• <a href="#" class="content-link">Генератор CSS-эффектов</a></p>
+            <p>Вот некоторые из моих недавних проектов:</p>
+            <p>• <a href="#" class="content-link">Киберпанк-портфолио</a> - Интерактивное портфолио с неоновым дизайном</p>
+            <p>• <a href="#" class="content-link">Терминал-симулятор</a> - Веб-приложение, имитирующее командную строку</p>
+            <p>• <a href="#" class="content-link">Генератор сияющего текста</a> - Инструмент для создания CSS-текста с неоновым свечением</p>
         </section>
         
         <section id="contact">
             <h2>> ssh connect</h2>
-            <p>Свяжитесь со мной:</p>
-            <p>• Email: <a href="mailto:nikita@example.com" class="content-link">nikita@example.com</a></p>
-            <p>• GitHub: <a href="#" class="content-link">github.com/nikita</a></p>
-            <p>• Telegram: <a href="#" class="content-link">@nikita</a></p>
+            <p>Свяжитесь со мной через:</p>
+            <p>• Email: <a href="mailto:hello@example.com" class="content-link">hello@example.com</a></p>
+            <p>• GitHub: <a href="#" class="content-link">github.com/username</a></p>
+            <p>• Telegram: <a href="#" class="content-link">@username</a></p>
         </section>
         
         <footer>
-            <p>© 2023 NikitaSketch | Создано с passion</p>
+            <p>© 2023 | Создано с помощью HTML, CSS и JavaScript | Вдохновлено cyber-эстетикой</p>
         </footer>
     </div>
 
+    <!-- ВСТРОЕННЫЙ JavaScript -->
     <script>
-        // Простой и надежный JavaScript
-        console.log('Сайт загружен!');
+        // Простой и надежный JS код
+        console.log('✅ Сайт NikitaSketch загружен!');
         
+        // Ждем полной загрузки DOM
         document.addEventListener('DOMContentLoaded', function() {
-            console.log('DOM готов');
+            console.log('✅ DOM готов - запускаем анимации');
             
-            // Анимация секций при прокрутке
-            function animateSections() {
+            // 1. Анимация секций при прокрутке
+            function checkSections() {
                 const sections = document.querySelectorAll('section');
                 const windowHeight = window.innerHeight;
                 
                 sections.forEach(section => {
                     const sectionTop = section.getBoundingClientRect().top;
                     
-                    if (sectionTop < windowHeight * 0.75) {
+                    // Если секция в зоне видимости
+                    if (sectionTop < windowHeight * 0.8) {
                         section.classList.add('visible');
                     }
                 });
             }
             
-            // Запускаем при загрузке и при прокрутке
-            animateSections();
-            window.addEventListener('scroll', animateSections);
+            // Запускаем при загрузке и при скролле
+            checkSections();
+            window.addEventListener('scroll', checkSections);
             
-            // Эффекты для навигации
+            // 2. Эффекты для навигации
             const navLinks = document.querySelectorAll('nav a');
             navLinks.forEach(link => {
                 const originalText = link.textContent;
                 const hoverText = link.getAttribute('data-hover');
                 
-                link.addEventListener('mouseenter', function() {
-                    if (hoverText) {
+                if (hoverText) {
+                    link.addEventListener('mouseenter', function() {
                         this.textContent = hoverText;
-                    }
-                });
-                
-                link.addEventListener('mouseleave', function() {
-                    this.textContent = originalText;
-                });
+                    });
+                    
+                    link.addEventListener('mouseleave', function() {
+                        this.textContent = originalText;
+                    });
+                }
             });
             
-            // Плавная прокрутка
+            // 3. Плавная прокрутка для якорных ссылок
             document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function(e) {
                     e.preventDefault();
@@ -315,8 +121,19 @@
                 });
             });
             
-            console.log('Все функции активированы');
+            console.log('✅ Все анимации активированы!');
         });
+        
+        // Фолбэк: если через 3 секунды секции не видны, показываем их
+        setTimeout(function() {
+            const hiddenSections = document.querySelectorAll('section:not(.visible)');
+            if (hiddenSections.length > 0) {
+                hiddenSections.forEach(section => {
+                    section.classList.add('visible');
+                });
+                console.log('🛡️ Фолбэк: все секции показаны');
+            }
+        }, 3000);
     </script>
 </body>
 </html>

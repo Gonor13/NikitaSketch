@@ -15,7 +15,6 @@ body {
     position: relative;
 }
 
-/* Смягченный анимированный градиентный фон */
 .background {
     position: fixed;
     top: -50%;
@@ -43,7 +42,6 @@ body {
     }
 }
 
-/* Контейнер контента */
 .container {
     max-width: 900px;
     margin: 0 auto;
@@ -51,7 +49,6 @@ body {
     z-index: 2;
 }
 
-/* Стили заголовка - более мягкие */
 header {
     margin-bottom: 3rem;
     padding: 1.5rem;
@@ -59,7 +56,6 @@ header {
     box-shadow: 0 0 20px rgba(90, 61, 138, 0.3);
     border-radius: 5px;
     background: rgba(15, 15, 20, 0.7);
-    backdrop-filter: blur(5px);
 }
 
 h1 {
@@ -81,7 +77,6 @@ h1 {
     50% { opacity: 0.6; }
 }
 
-/* Навигация - приглушенная */
 nav ul {
     list-style: none;
     display: flex;
@@ -101,30 +96,12 @@ nav a {
     border-radius: 3px;
 }
 
-nav a:hover {
-    color: #e0e0e0;
-    text-shadow: 0 0 4px #e0e0e0;
-    border: 1px solid #6a4f9d;
-    box-shadow: 0 0 12px rgba(106, 79, 157, 0.4);
-    background: rgba(106, 79, 157, 0.1);
-}
-
-/* Секции контента - более мягкие */
 section {
     margin: 3rem 0;
     padding: 2.2rem;
     border-left: 3px solid #6a4f9d;
     background: rgba(18, 18, 24, 0.8);
-    opacity: 0;
-    transform: translateY(25px);
-    transition: opacity 0.9s ease, transform 0.9s ease;
     border-radius: 0 8px 8px 0;
-    backdrop-filter: blur(4px);
-}
-
-section.visible {
-    opacity: 1;
-    transform: translateY(0);
 }
 
 h2 {
@@ -142,7 +119,6 @@ p {
     line-height: 1.7;
 }
 
-/* Ссылки в контенте - приглушенные */
 .content-link {
     color: #7db4bb;
     text-decoration: none;
@@ -152,13 +128,6 @@ p {
     border-radius: 2px;
 }
 
-.content-link:hover {
-    color: #c0e6eb;
-    text-shadow: 0 0 4px #c0e6eb;
-    background: rgba(125, 180, 187, 0.15);
-}
-
-/* Футер */
 footer {
     margin-top: 5rem;
     text-align: center;
@@ -168,16 +137,8 @@ footer {
     color: #777;
     background: rgba(15, 15, 20, 0.6);
     border-radius: 8px;
-    backdrop-filter: blur(3px);
 }
 
-/* Дополнительные элементы для улучшения читаемости */
-strong {
-    color: #b4a5d9;
-    font-weight: 600;
-}
-
-/* Адаптивность */
 @media (max-width: 768px) {
     body {
         padding: 1.2rem;
@@ -203,7 +164,6 @@ strong {
     }
 }
 
-/* Плавное появление всего контента при загрузке */
 body {
     animation: fadeIn 1.2s ease-out;
 }

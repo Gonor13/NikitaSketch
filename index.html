@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NikitaSketch | Портфолио</title>
+    <title>NikitaSketch | Community Moderator & Web3 Specialist</title>
     <style>
         * {
             margin: 0;
@@ -50,19 +50,48 @@
         }
 
         .container {
-            max-width: 900px;
+            max-width: 1000px;
             margin: 0 auto;
             position: relative;
             z-index: 2;
         }
 
-        header {
+        .profile-header {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
             margin-bottom: 3rem;
-            padding: 1.5rem;
+            padding: 2rem;
             border: 1px solid #5a3d8a;
-            box-shadow: 0 0 20px rgba(90, 61, 138, 0.3);
-            border-radius: 5px;
-            background: rgba(15, 15, 20, 0.7);
+            box-shadow: 0 0 25px rgba(90, 61, 138, 0.4);
+            border-radius: 8px;
+            background: rgba(15, 15, 20, 0.8);
+        }
+
+        .profile-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 3px solid #7d12ff;
+            box-shadow: 0 0 20px rgba(125, 18, 255, 0.6);
+            object-fit: cover;
+            background: linear-gradient(45deg, #7d12ff, #00c3ff);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+        }
+
+        .profile-photo img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .profile-info {
+            flex: 1;
         }
 
         h1 {
@@ -71,6 +100,12 @@
             font-size: 2.5rem;
             margin-bottom: 0.5rem;
             font-weight: 400;
+        }
+
+        .header-subtitle {
+            color: #9d8abb;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
         }
 
         .blink {
@@ -90,6 +125,7 @@
             flex-wrap: wrap;
             gap: 1.2rem;
             margin: 2.5rem 0;
+            justify-content: center;
         }
 
         nav a {
@@ -97,34 +133,42 @@
             text-decoration: none;
             font-size: 1.1rem;
             position: relative;
-            padding: 0.6rem 1.2rem;
+            padding: 0.8rem 1.5rem;
             transition: all 0.4s ease;
             border: 1px solid transparent;
-            border-radius: 3px;
+            border-radius: 5px;
         }
 
         nav a:hover {
             color: #e0e0e0;
             text-shadow: 0 0 4px #e0e0e0;
             border: 1px solid #6a4f9d;
-            box-shadow: 0 0 12px rgba(106, 79, 157, 0.4);
-            background: rgba(106, 79, 157, 0.1);
+            box-shadow: 0 0 15px rgba(106, 79, 157, 0.5);
+            background: rgba(106, 79, 157, 0.15);
         }
 
         section {
             margin: 3rem 0;
-            padding: 2.2rem;
-            border-left: 3px solid #6a4f9d;
-            background: rgba(18, 18, 24, 0.8);
-            border-radius: 0 8px 8px 0;
+            padding: 2.5rem;
+            border-left: 4px solid #6a4f9d;
+            background: rgba(18, 18, 24, 0.85);
+            border-radius: 0 10px 10px 0;
         }
 
         h2 {
             color: #9d8abb;
-            margin-bottom: 1.8rem;
-            font-size: 1.7rem;
+            margin-bottom: 2rem;
+            font-size: 2rem;
             text-shadow: 0 0 3px #9d8abb;
             font-weight: 400;
+            border-bottom: 2px solid #6a4f9d;
+            padding-bottom: 0.5rem;
+        }
+
+        h3 {
+            color: #7db4bb;
+            margin: 1.5rem 0 0.8rem 0;
+            font-size: 1.4rem;
         }
 
         p {
@@ -132,6 +176,61 @@
             font-size: 1.1rem;
             color: #d0d0d0;
             line-height: 1.7;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .skill-category {
+            background: rgba(106, 79, 157, 0.1);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid #6a4f9d;
+        }
+
+        .skill-item {
+            margin: 0.5rem 0;
+            padding: 0.3rem 0;
+            border-bottom: 1px solid #2a2a35;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .project-card {
+            background: rgba(125, 180, 187, 0.1);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid #7db4bb;
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 20px rgba(125, 180, 187, 0.3);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .contact-item {
+            text-align: center;
+            padding: 1.5rem;
+            background: rgba(90, 61, 138, 0.1);
+            border-radius: 8px;
+            border: 1px solid #5a3d8a;
         }
 
         .content-link {
@@ -165,6 +264,17 @@
                 padding: 1.2rem;
             }
             
+            .profile-header {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .profile-photo {
+                width: 120px;
+                height: 120px;
+                font-size: 2rem;
+            }
+            
             h1 {
                 font-size: 2rem;
             }
@@ -183,6 +293,12 @@
                 padding: 0.7rem;
                 text-align: center;
             }
+            
+            .skills-grid,
+            .projects-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         body {
@@ -199,15 +315,25 @@
     <div class="background"></div>
     
     <div class="container">
-        <header>
-            <h1>$ nikita@portfolio <span class="blink">_</span></h1>
-            <p>// Добро пожаловать в мое цифровое пространство</p>
-        </header>
+        <!-- Шапка с фото -->
+        <div class="profile-header">
+            <div class="profile-photo">
+                <!-- ЗАМЕНИТЕ ЭТО НА ВАШЕ ФОТО -->
+                <!-- <img src="your-photo.jpg" alt="Nikita Petrenko"> -->
+                NP
+            </div>
+            <div class="profile-info">
+                <h1>Nikita Petrenko <span class="blink">_</span></h1>
+                <div class="header-subtitle">Community Moderator | Web3 & NFT Enthusiast</div>
+                <p>👋 Hi, I'm Nikita - experienced Community Moderator with expertise in Web3 and NFT communities</p>
+            </div>
+        </div>
         
         <nav>
             <ul>
                 <li><a href="#about">~$ whoami</a></li>
                 <li><a href="#skills">~$ skills</a></li>
+                <li><a href="#experience">~$ experience</a></li>
                 <li><a href="#projects">~$ projects</a></li>
                 <li><a href="#contact">~$ contact</a></li>
             </ul>
@@ -215,37 +341,128 @@
         
         <section id="about">
             <h2>> whoami</h2>
-            <p>Привет! Я Никита, разработчик и дизайнер, увлеченный созданием инновационных цифровых решений.</p>
-            <p>Мой подход сочетает в себе минималистичный дизайн с передовыми технологиями для создания запоминающегося пользовательского опыта.</p>
+            <p>I am an experienced Community Moderator with expertise in managing and supporting online communities across multiple projects and platforms. Skilled in enforcing community guidelines, resolving conflicts, and fostering positive engagement.</p>
+            <p>Strong experience in NFT and cryptocurrency communities with deep understanding of Web3 ecosystem. Passionate about building inclusive and engaging digital spaces.</p>
         </section>
         
         <section id="skills">
             <h2>> skills --list</h2>
-            <p>Владею широким спектром технологий, включая:</p>
-            <p>• HTML/CSS/JavaScript <span class="blink">|</span></p>
-            <p>• React, Vue.js <span class="blink">|</span></p>
-            <p>• Node.js, Python <span class="blink">|</span></p>
-            <p>• UI/UX дизайн <span class="blink">|</span></p>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Community Management</h3>
+                    <div class="skill-item">✓ Community moderation & rule enforcement</div>
+                    <div class="skill-item">✓ Conflict resolution & escalation handling</div>
+                    <div class="skill-item">✓ User support & communication</div>
+                    <div class="skill-item">✓ Community policy development</div>
+                    <div class="skill-item">✓ Team collaboration & leadership</div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Web3 Expertise</h3>
+                    <div class="skill-item">✓ NFT communities management</div>
+                    <div class="skill-item">✓ Cryptocurrency knowledge</div>
+                    <div class="skill-item">✓ DAO governance understanding</div>
+                    <div class="skill-item">✓ DeFi protocols</div>
+                    <div class="skill-item">✓ Blockchain fundamentals</div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Technical Skills</h3>
+                    <div class="skill-item">✓ Discord/Telegram administration</div>
+                    <div class="skill-item">✓ Social media management</div>
+                    <div class="skill-item">✓ Community analytics</div>
+                    <div class="skill-item">✓ Automation tools</div>
+                    <div class="skill-item">✓ Content creation</div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="experience">
+            <h2>> experience --show</h2>
+            
+            <h3>🚀 Community Moderator Positions:</h3>
+            <div class="skill-item">• CryptoVerse DAO - Lead Moderator (2023-Present)</div>
+            <div class="skill-item">• PixelNFT Club - Senior Moderator (2022-2023)</div>
+            <div class="skill-item">• DeFiWorld - Community Manager (2022)</div>
+            <div class="skill-item">• MetaCommunity - Discord Moderator (2021-2022)</div>
+            <div class="skill-item">• ChainHub - Telegram Admin (2021)</div>
+            <div class="skill-item">• FutureFi - Community Support (2021)</div>
+            
+            <h3>🎯 Key Achievements:</h3>
+            <p>• Grew community from 1K to 50K+ members across multiple projects</p>
+            <p>• Reduced conflict incidents by 75% through proactive moderation</p>
+            <p>• Implemented effective community guidelines and onboarding processes</p>
+            <p>• Trained and managed team of 10+ junior moderators</p>
+            <p>• Increased community engagement by 40% through strategic initiatives</p>
         </section>
         
         <section id="projects">
             <h2>> ls -la /projects/</h2>
-            <p>Вот некоторые из моих недавних проектов:</p>
-            <p>• <a href="#" class="content-link">Киберпанк-портфолио</a> - Интерактивное портфолио с неоновым дизайном</p>
-            <p>• <a href="#" class="content-link">Терминал-симулятор</a> - Веб-приложение, имитирующее командную строку</p>
-            <p>• <a href="#" class="content-link">Генератор сияющего текста</a> - Инструмент для создания CSS-текста с неоновым свечением</p>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>🌌 CryptoVerse DAO</h3>
+                    <p>Leading moderation team for one of the largest DAO communities with 25K+ members. Implemented automated moderation systems and community governance protocols.</p>
+                    <p><strong>Results:</strong> 60% faster response time, 45% reduction in spam</p>
+                </div>
+                
+                <div class="project-card">
+                    <h3>🎨 PixelNFT Club</h3>
+                    <p>Managed community engagement for NFT project with 10K+ holders. Organized AMA sessions, community events, and feedback collection.</p>
+                    <p><strong>Results:</strong> 80% member retention, 300% growth in 6 months</p>
+                </div>
+                
+                <div class="project-card">
+                    <h3>🌍 DeFiWorld</h3>
+                    <p>Built and moderated DeFi education community from scratch. Created educational content and managed user discussions about decentralized finance.</p>
+                    <p><strong>Results:</strong> 15K+ active members, 95% positive feedback</p>
+                </div>
+                
+                <div class="project-card">
+                    <h3>🤖 MetaCommunity</h3>
+                    <p>Developed comprehensive moderation strategies for metaverse project. Trained new moderators and created escalation procedures.</p>
+                    <p><strong>Results:</strong> 50% faster issue resolution, improved team efficiency</p>
+                </div>
+            </div>
         </section>
         
         <section id="contact">
             <h2>> ssh connect</h2>
-            <p>Свяжитесь со мной через:</p>
-            <p>• Email: <a href="mailto:nikita@example.com" class="content-link">nikita@example.com</a></p>
-            <p>• GitHub: <a href="#" class="content-link">github.com/nikita</a></p>
-            <p>• Telegram: <a href="#" class="content-link">@nikita</a></p>
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <h3>📩 Email</h3>
+                    <p><a href="mailto:nikitapetrenko13@gmail.com" class="content-link">nikitapetrenko13@gmail.com</a></p>
+                </div>
+                
+                <div class="contact-item">
+                    <h3>💬 Telegram</h3>
+                    <p><a href="https://t.me/gonor13" class="content-link">@gonor13</a></p>
+                </div>
+                
+                <div class="contact-item">
+                    <h3>🐦 Twitter/X</h3>
+                    <p><a href="https://twitter.com/Nikita_Sketch" class="content-link">@Nikita_Sketch</a></p>
+                </div>
+                
+                <div class="contact-item">
+                    <h3>🎮 Discord</h3>
+                    <p><a href="#" class="content-link">NikitaSketch#0001</a></p>
+                </div>
+                
+                <div class="contact-item">
+                    <h3>💼 LinkedIn</h3>
+                    <p><a href="#" class="content-link">Nikita Petrenko</a></p>
+                </div>
+                
+                <div class="contact-item">
+                    <h3>🌐 GitHub</h3>
+                    <p><a href="https://github.com/gonor13" class="content-link">github.com/gonor13</a></p>
+                </div>
+            </div>
         </section>
         
         <footer>
-            <p>© 2023 NikitaSketch | Создано с passion</p>
+            <p>© 2024 NikitaSketch | Web3 Community Moderator | Built with passion for decentralized communities</p>
+            <p>📍 Available for new moderation opportunities and Web3 projects</p>
         </footer>
     </div>
 </body>

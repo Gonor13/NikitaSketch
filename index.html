@@ -1,55 +1,117 @@
-<script>
-// Упрощенный и надежный JavaScript
-function initPage() {
-    console.log('🚀 Сайт загружен!');
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NikitaSketch | Портфолио</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background"></div>
     
-    // 1. Сразу показываем все секции
-    const sections = document.querySelectorAll('section');
-    sections.forEach(section => {
-        section.style.opacity = '1';
-        section.style.transform = 'translateY(0)';
-        section.style.transition = 'all 0.8s ease';
-    });
-    
-    // 2. Эффекты для навигации
-    const navLinks = document.querySelectorAll('nav a');
-    navLinks.forEach(link => {
-        const hoverText = link.getAttribute('data-hover');
+    <div class="container">
+        <header>
+            <h1>$ nikita@portfolio <span class="blink">_</span></h1>
+            <p>// Добро пожаловать в мое цифровое пространство</p>
+        </header>
         
-        link.addEventListener('mouseenter', function() {
-            if (hoverText) this.textContent = hoverText;
-            this.style.color = '#fff';
-            this.style.textShadow = '0 0 10px #7d12ff';
-        });
+        <nav>
+            <ul>
+                <li><a href="#about">~$ whoami</a></li>
+                <li><a href="#skills">~$ skills</a></li>
+                <li><a href="#projects">~$ projects</a></li>
+                <li><a href="#contact">~$ contact</a></li>
+            </ul>
+        </nav>
         
-        link.addEventListener('mouseleave', function() {
-            this.textContent = this.getAttribute('data-hover') ? '~$ ' + this.getAttribute('data-hover') : this.textContent;
-            this.style.color = '#8a6dbb';
-            this.style.textShadow = 'none';
-        });
-    });
-    
-    // 3. Плавная прокрутка
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                window.scrollTo({
-                    top: target.offsetTop - 50,
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
-    
-    console.log('✅ Все функции активированы!');
-}
+        <section id="about">
+            <h2>> whoami</h2>
+            <p>Привет! Я Никита, разработчик и дизайнер, увлеченный созданием инновационных цифровых решений.</p>
+            <p>Мой подход сочетает в себе минималистичный дизайн с передовыми технологиями для создания запоминающегося пользовательского опыта.</p>
+        </section>
+        
+        <section id="skills">
+            <h2>> skills --list</h2>
+            <p>Владею широким спектром технологий, включая:</p>
+            <p>• HTML/CSS/JavaScript <span class="blink">|</span></p>
+            <p>• React, Vue.js <span class="blink">|</span></p>
+            <p>• Node.js, Python <span class="blink">|</span></p>
+            <p>• UI/UX дизайн <span class="blink">|</span></p>
+        </section>
+        
+        <section id="projects">
+            <h2>> ls -la /projects/</h2>
+            <p>Вот некоторые из моих недавних проектов:</p>
+            <p>• <a href="#" class="content-link">Киберпанк-портфолио</a> - Интерактивное портфолио с неоновым дизайном</p>
+            <p>• <a href="#" class="content-link">Терминал-симулятор</a> - Веб-приложение, имитирующее командную строку</p>
+            <p>• <a href="#" class="content-link">Генератор сияющего текста</a> - Инструмент для создания CSS-текста с неоновым свечением</p>
+        </section>
+        
+        <section id="contact">
+            <h2>> ssh connect</h2>
+            <p>Свяжитесь со мной через:</p>
+            <p>• Email: <a href="mailto:nikita@example.com" class="content-link">nikita@example.com</a></p>
+            <p>• GitHub: <a href="#" class="content-link">github.com/nikita</a></p>
+            <p>• Telegram: <a href="#" class="content-link">@nikita</a></p>
+        </section>
+        
+        <footer>
+            <p>© 2023 NikitaSketch | Создано с passion</p>
+        </footer>
+    </div>
 
-// Запускаем когда страница загрузится
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initPage);
-} else {
-    initPage();
-}
-</script>
+    <script>
+        // Простые и надежные эффекты
+        console.log('🚀 Сайт NikitaSketch загружен!');
+        
+        // Показываем все секции сразу
+        document.querySelectorAll('section').forEach(section => {
+            section.style.opacity = '1';
+            section.style.transform = 'translateY(0)';
+            section.style.transition = 'all 0.8s ease';
+        });
+        
+        // Эффекты для навигации
+        document.querySelectorAll('nav a').forEach(link => {
+            link.onmouseenter = function() {
+                this.style.color = '#fff';
+                this.style.textShadow = '0 0 10px #7d12ff';
+                this.style.background = 'rgba(125, 18, 255, 0.1)';
+            };
+            link.onmouseleave = function() {
+                this.style.color = '#8a6dbb';
+                this.style.textShadow = 'none';
+                this.style.background = 'transparent';
+            };
+        });
+        
+        // Эффекты для контент-ссылок
+        document.querySelectorAll('.content-link').forEach(link => {
+            link.onmouseenter = function() {
+                this.style.color = '#c0e6eb';
+                this.style.textShadow = '0 0 8px #c0e6eb';
+            };
+            link.onmouseleave = function() {
+                this.style.color = '#7db4bb';
+                this.style.textShadow = '0 0 2px #7db4bb';
+            };
+        });
+        
+        // Плавная прокрутка
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 70,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        console.log('✅ Все эффекты активированы!');
+    </script>
+</body>
+</html>

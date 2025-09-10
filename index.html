@@ -296,6 +296,44 @@
         });
         
         console.log('✅ Все эффекты активированы!');
+       <script>
+        // ВОТ СЮДА ВСТАВЛЯЕМ КОД МЕЖДУ ОТКРЫВАЮЩИМ И ЗАКРЫВАЮЩИМ ТЕГОМ SCRIPT
+        // Простейший работающий JavaScript
+        console.log('🔍 Скрипт запущен');
+
+        // Эффекты при наведении - простейшая версия
+        var links = document.querySelectorAll('nav a, .content-link');
+        for (var i = 0; i < links.length; i++) {
+            links[i].onmouseover = function() {
+                this.style.color = '#ffffff';
+                this.style.textShadow = '0 0 10px #7d12ff';
+            };
+            links[i].onmouseout = function() {
+                this.style.color = '';
+                this.style.textShadow = '';
+            };
+        }
+
+        // Самая простая плавная прокрутка
+        var navLinks = document.querySelectorAll('nav a');
+        for (var i = 0; i < navLinks.length; i++) {
+            navLinks[i].onclick = function(e) {
+                e.preventDefault();
+                var targetId = this.getAttribute('href');
+                var target = document.querySelector(targetId);
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 50,
+                        behavior: 'smooth'
+                    });
+                }
+            };
+        }
+
+        console.log('✅ Простые эффекты включены');
     </script>
+</body> <!-- Это должно остаться НА СЛЕДУЮЩЕЙ СТРОКЕ после закрывающего </script> -->
+</html>
 </body>
 </html>
+
